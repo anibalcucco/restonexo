@@ -1,0 +1,10 @@
+<p>
+  <b>Comment:</b>
+  <%= comment.body %>
+</p>
+
+<p>
+  <%= link_to 'Borrar comentario', [comment.restaurant, comment],
+               :confirm => 'Esta seguro?',
+               :method => :delete %>
+</p>

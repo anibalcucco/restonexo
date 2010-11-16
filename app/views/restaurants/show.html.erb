@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @restaurant.description %>
+</p>
+
+<h2>Comentarios:</h2>
+<%= render :partial => "comments/comment", :collection => @restaurant.comments %>
+
+<h2>Agregar comentario:</h2>
+<%= render :partial => "comments/form", :locals => { :restaurant => @restaurant } %>
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>
