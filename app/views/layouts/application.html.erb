@@ -8,7 +8,22 @@
 </head>
 <body>
 
-<%= yield %>
+  <div id="container">
+    <div id="user_nav">
+      <% if user_signed_in? -%>
+        Loguado como <%= current_user.email %>
+        <%= link_to "Salir", destroy_user_session_path %>
+      <% else -%>
+        <%= link_to "Registro", new_user_registration_path %> o <%= link_to "Entrar", new_user_session_path %>
+      <% end -%>
+    </div>
+  </div>
+
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, :class => "flash #{name}" %>
+  <% end -%>
+
+  <%= yield %>
 
 </body>
 </html>
