@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
   def find_restaurant
     unless @restaurant = Restaurant.find(params[:restaurant_id])
       flash[:error] = "No se encontro el restaurant"
-      redirect_to home_path
+      redirect_to root_path
     end
   end
 
