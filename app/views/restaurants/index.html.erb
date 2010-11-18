@@ -1,9 +1,9 @@
-<h1>Listing restaurants</h1>
+<h1>Restaurants</h1>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
+    <th>Nombre</th>
+    <th>Descripcion</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,13 +13,13 @@
   <tr>
     <td><%= restaurant.name %></td>
     <td><%= restaurant.description %></td>
-    <td><%= link_to 'Show', restaurant %></td>
-    <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-    <td><%= link_to 'Destroy', restaurant, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Ver', restaurant %></td>
+    <td><%= link_to 'Editar', edit_restaurant_path(restaurant) %></td>
+    <td><%= link_to 'Borrar', restaurant, :confirm => 'Esta seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+<%= link_to 'Nuevo Restaurant', new_restaurant_path %>

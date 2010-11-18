@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Nombre:</b>
   <%= @restaurant.name %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b>Descripcion:</b>
   <%= @restaurant.description %>
 </p>
 
@@ -16,5 +16,5 @@
 <h2>Agregar comentario:</h2>
 <%= render :partial => "comments/form", :locals => { :restaurant => @restaurant } %>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+<%= link_to 'Editar', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Atras', restaurants_path %>
