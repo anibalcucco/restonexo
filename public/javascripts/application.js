@@ -6,9 +6,9 @@ $(document).ready(function() {
     captionEl: $("#stars-cap")
   });
 
-  $("div.comment, div.restaurant .stars input[type=radio]").attr("disabled", true);
+  $("div.comment, div.restaurant").find(".stars input[type=radio]").attr("disabled", true);
 
-  $("div.comment, div.restaurant .stars").stars({
+  $("div.comment, div.restaurant").find(".stars").stars({
     cancelShow: false
   });
 
