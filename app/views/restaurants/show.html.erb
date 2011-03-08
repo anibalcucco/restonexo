@@ -19,4 +19,5 @@
 <%= render :partial => "comments/form", :locals => { :restaurant => @restaurant } %>
 
 <%= link_to 'Editar', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Borrar', @restaurant, :confirm => "Esta seguro?", :method => :delete %> |
 <%= link_to 'Atras', restaurants_path %>
