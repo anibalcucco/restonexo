@@ -6,4 +6,8 @@ class Restaurant < ActiveRecord::Base
   validates :description, :presence => true,
                           :length => { :minimum => 5 }
 
+  def rating
+    @rating ||= comments.select("avg(rating) as avg").first.avg.to_i
+  end
+
 end

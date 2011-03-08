@@ -1,0 +1,7 @@
+<div class="stars">
+  <%= radio_button(:comment, :rating, "1", :checked => (object.rating == 1), :title => "Malo") %>
+  <%= radio_button(:comment, :rating, "2", :checked => (object.rating == 2), :title => "Regular") %>
+  <%= radio_button(:comment, :rating, "3", :checked => (object.rating == 3), :title => "Promedio") %>
+  <%= radio_button(:comment, :rating, "4", :checked => (object.rating == 4), :title => "Bueno") %>
+  <%= radio_button(:comment, :rating, "5", :checked => (object.rating == 5), :title => "Excelente") %>
+</div>

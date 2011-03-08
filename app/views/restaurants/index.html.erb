@@ -1,25 +1,13 @@
-<h1>Restaurants</h1>
-
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Descripcion</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= link_to 'Nuevo Restaurant', new_restaurant_path %>
 
 <% @restaurants.each do |restaurant| %>
-  <tr>
-    <td><%= restaurant.name %></td>
-    <td><%= restaurant.description %></td>
-    <td><%= link_to 'Ver', restaurant %></td>
-    <td><%= link_to 'Editar', edit_restaurant_path(restaurant) %></td>
-    <td><%= link_to 'Borrar', restaurant, :confirm => 'Esta seguro?', :method => :delete %></td>
-  </tr>
+  <div class="restaurant">
+    <h3><%= link_to restaurant.name, restaurant %></h3>
+    <p>
+      <%= restaurant.description %>
+    </p>
+    <p>
+      <%= render :partial => "/shared/rating", :locals => { :object => restaurant } %>
+    </p>
+  </div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'Nuevo Restaurant', new_restaurant_path %>

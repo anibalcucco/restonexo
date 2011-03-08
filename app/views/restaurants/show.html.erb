@@ -1,19 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="restaurant">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Nombre:</b>
-  <%= @restaurant.name %>
-</p>
+  <h3><%= @restaurant.name %></h3>
 
-<p>
-  <b>Descripcion:</b>
-  <%= @restaurant.description %>
-</p>
+  <p>
+    <%= @restaurant.description %>
+  </p>
 
-<h2>Comentarios:</h2>
+  <p>
+    <%= render :partial => "/shared/rating", :locals => { :object => @restaurant } %>
+  </p>
+</div>
+
+<h4>Comentarios:</h4>
 <%= render :partial => "comments/comment", :collection => @restaurant.comments %>
 
-<h2>Agregar comentario:</h2>
+<h4>Agregar comentario:</h4>
 <%= render :partial => "comments/form", :locals => { :restaurant => @restaurant } %>
 
 <%= link_to 'Editar', edit_restaurant_path(@restaurant) %> |

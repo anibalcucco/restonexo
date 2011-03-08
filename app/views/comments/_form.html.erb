@@ -1,8 +1,11 @@
-<%= form_for([restaurant, restaurant.comments.build]) do |f| %>
+<%= form_for([restaurant, comment = restaurant.comments.build]) do |f| %>
   <div class="field">
     Comentario<br />
     <%= f.text_area :body %>
   </div>
+  Calificación: <span id="stars-cap"></span>
+  <%= render :partial => "/shared/rating", :locals => { :object => comment } %>
+  <br/><br/>
   <div class="actions">
     <%= f.submit %>
   </div>

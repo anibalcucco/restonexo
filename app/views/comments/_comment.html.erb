@@ -1,10 +1,9 @@
-<p>
-  <b>Comentario:</b>
+<div class="comment">
   <%= comment.body %>
-</p>
-
-<p>
+  <%= render :partial => "/shared/rating", :locals => { :object => comment } %>
+</div>
+<div class="actions">
   <%= link_to 'Borrar comentario', [comment.restaurant, comment],
                :confirm => 'Esta seguro?',
                :method => :delete %>
-</p>
+</div>
